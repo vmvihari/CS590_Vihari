@@ -1,0 +1,12 @@
+./myinfo
+Fri May 29 19:44:31 CDT 2015
+---------------------------
+System name: lightning
+User information:
+full name: Monishvihari  Vappangi
+log name: mv0009
+uid: 2590
+gid: 210
+HOME dir: /home/csuser/mv0009
+Default shell: /bin/bash
+-------------------------------
