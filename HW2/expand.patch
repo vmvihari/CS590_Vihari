@@ -1,0 +1,15 @@
+307,314c307
+< 		  {
+< 		    if (tab_size < 10)
+<                       next_tab_column = column + 100;
+< 		    else if (tab_size >= 10 && tab_size < 25)
+< 		      next_tab_column = column + 300;
+< 		    else
+<                       next_tab_column = column + 1; //(tab_size - column % tab_size);
+< 		  }
+---
+>                     next_tab_column = column + (tab_size - column % tab_size);
+327c320
+<                               next_tab_column = 100;//tab;
+---
+>                               next_tab_column = tab;
