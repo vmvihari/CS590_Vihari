@@ -1,15 +1,27 @@
-307,314c307
-< 		  {
-< 		    if (tab_size < 10)
-<                       next_tab_column = column + 100;
-< 		    else if (tab_size >= 10 && tab_size < 25)
-< 		      next_tab_column = column + 300;
-< 		    else
-<                       next_tab_column = column + 1; //(tab_size - column % tab_size);
-< 		  }
----
->                     next_tab_column = column + (tab_size - column % tab_size);
-327c320
-<                               next_tab_column = 100;//tab;
----
->                               next_tab_column = tab;
+--- expand.c	2015-06-12 14:56:28.961753306 -0400
++++ MyExpand.c	2015-06-12 14:54:47.301216128 -0400
+@@ -304,7 +304,14 @@
+                   uintmax_t next_tab_column;
+ 
+                   if (tab_size)
+-	 		next_tab_column = column + (tab_size - column % tab_size);
++                  {
++	 		if (tab_size < 10)
++	 			next_tab_column = column + 100;
++	 		else if (tab_size >= 10 && tab_size < 25)
++	 			next_tab_column = column + 300;
++	 		else
++	 			next_tab_column = column + 1; //(tab_size - column % tab_size);
++	 	  }
+                   else
+                     while (true)
+                       if (tab_index == first_free_tab)
+@@ -317,7 +324,7 @@
+                           uintmax_t tab = tab_list[tab_index++];
+                           if (column < tab)
+                             {
+-                              next_tab_column = tab;
++                              next_tab_column = 50;
+                               break;
+                             }
+                         }
