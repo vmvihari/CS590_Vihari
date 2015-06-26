@@ -1,1 +1,0 @@
-gcc -o myinfo myinfo.c
